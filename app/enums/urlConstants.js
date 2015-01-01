@@ -10,7 +10,9 @@ exports.urls = {
     RE_TWEET: API_VERSION.v1 + '/tweet/RT'
   },
   WEB: {
-    HOME_PAGE: '/'
+    HOME_PAGE: '/',
+    TEST_REACT_JS: '/test/reactJS',
+    TEST_REACT_JSX: '/test/reactJSX'
   }
 }
 

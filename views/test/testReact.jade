@@ -1,0 +1,27 @@
+extends ../layout
+
+block head
+  title Testing #{title} with JSX
+
+block content
+  #example
+
+block js
+  script(src='../js/build/react.min.js')
+  script(src='../js/build/JSXTransformer.js')
+  script(type='text/jsx').
+    var HelloWorld = React.createClass({
+        render: function() {
+          return (
+            <p>
+              Hello Dude, It is {this.props.date.toTimeString()}
+            </p>
+          );
+        }
+      });
+      setInterval(function() {
+        React.render(
+          <HelloWorld date={new Date()} />,
+          document.getElementById('example')
+        );
+      }, 500);
