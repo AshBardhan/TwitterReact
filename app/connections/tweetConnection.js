@@ -9,14 +9,10 @@ var tweet =  new twitter({
 });
 
 exports.showTweetFeed = function(successCallback, failureCallback){
-  tweet.stream('filter', {track: 'royal rumble'}, function(stream){
-    stream.on('data', function(data){
-      if(data) {
-        console.log('Inside');
-        successCallback(data);
-      } else {
-        failureCallback;
-      }
-    });
+  tweet.get('search/tweets', { q: 'chelsea', count: 10 }, function(err, data, response) {
+    if(err){
+      failureCallback(err);
+    }
+    successCallback(data);
   });
 }
