@@ -1,0 +1,15 @@
+extends ../layout
+
+block head
+  title Testing #{title}
+
+block content
+  #example
+
+block js
+  script(src='../js/general.js')
+  script(src='../js/tweet.js')
+  script.
+    $(document).ready(function(){
+      tweetFlow.fetchTweets();
+    });

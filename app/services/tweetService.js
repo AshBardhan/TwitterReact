@@ -1,5 +1,5 @@
 var tweetConnection = require('../connections/tweetConnection');
 
-exports.showTweetFeed = function (successCallback, failureCallback) {
-  tweetConnection.showTweetFeed(successCallback, failureCallback);
+exports.searchTweetFeed = function (params, successCallback, failureCallback) {
+  tweetConnection.searchTweetFeed(params, successCallback, failureCallback);
 };

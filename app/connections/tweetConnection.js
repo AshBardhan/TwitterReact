@@ -8,8 +8,8 @@ var tweet =  new twitter({
   access_token_secret: config.twitterAPI.access_token_secret
 });
 
-exports.showTweetFeed = function(successCallback, failureCallback){
-  tweet.get('search/tweets', { q: 'chelsea', count: 10 }, function(err, data, response) {
+exports.searchTweetFeed = function(params, successCallback, failureCallback){
+  tweet.get('search/tweets', params, function(err, data, response) {
     if(err){
       failureCallback(err);
     }
