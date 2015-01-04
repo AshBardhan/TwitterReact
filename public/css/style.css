@@ -1,7 +1,213 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@-ms-viewport {
+  width: auto;
 }
-a {
-  color: #00B7FF;
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 14px !important;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  html {
+    font-size: 13px !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 12.5px !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px !important;
+  }
+}
+body {
+  color: #666666;
+  min-height: 480px;
+  min-width: 320px;
+  margin: 0;
+  font-size: 1rem !important;
+}
+h1 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+}
+h2 {
+  font-size: 1.15rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 0.85rem;
+}
+h5,
+h6 {
+  font-size: 0.7rem;
+}
+h6 {
+  font-style: italic;
+}
+h2,
+h3,
+h4 {
+  color: #1a1a1a;
+  font-weight: 400;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: #00adef;
+}
+a:hover,
+a:focus {
+  color: #0076a3;
+  text-decoration: underline;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+.text-light {
+  color: #8c8c8c;
+}
+.text-lighter {
+  color: #b3b3b3;
+}
+.text-dark {
+  color: #404040;
+}
+.text-darker {
+  color: #1a1a1a;
+}
+.text-blue {
+  color: #00adef;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-top {
+  vertical-align: top;
+}
+.text-middle {
+  vertical-align: middle;
+}
+.text-bottom {
+  vertical-align: bottom;
+}
+.display-inline {
+  display: inline-block;
+}
+.display-block {
+  display: block;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-bold {
+  font-weight: bold;
+}
+.text-normal {
+  font-weight: normal;
+}
+.text-xsmall {
+  font-size: 0.7rem;
+}
+.text-small {
+  font-size: 0.85rem;
+}
+.text-base {
+  font-size: 1rem;
+}
+.text-medium {
+  font-size: 1.15rem;
+}
+.text-large {
+  font-size: 1.3rem;
+}
+.hide {
+  display: none;
+}
+.row {
+  margin-top: 1em;
+}
+.row.nested {
+  margin-top: 2em;
+}
+.block-center {
+  margin: 0px auto;
+}
+.main-content {
+  min-height: 600px;
+}
+.main-content > .content {
+  max-width: 1020px;
+  margin: 0px auto;
+}
+.bkground-light {
+  background-color: #fafafa;
+}
+.bkground-lighter {
+  background-color: #fcfcfc;
+}
+.bkground-dark {
+  background-color: #c7c7c7;
+}
+.bkground-darker {
+  background-color: #949494;
+}
+.bkground-white {
+  background-color: #ffffff;
+}
+.bkground-black {
+  background-color: #000000;
+}
+.boxes-inline {
+  font-size: 0;
+}
+.boxes-inline .box-half {
+  width: 50%;
+  display: inline-block;
+}
+.brdr-radius-base {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.brdr-radius-circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.tweet-item {
+  border: 2px solid #dddddd;
+  padding: 1em;
+  background-color: #fcfcfc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.tweet-item img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.tweet-item .tweet-msg {
+  margin-top: 0.5em;
+}
+.tweet-item .tweet-user {
+  color: #00adef;
+  font-size: 1.15rem;
+  font-weight: bold;
 }
