@@ -16,13 +16,16 @@ var tweetFlow = {
       }
     });
   },
-  fetchTweets: function () {
-    var success = function(data) {
-      console.log(data);
+  fetchTweets: function (text) {
+    var success = function (data) {
+      if(data.statuses.length > 0) {
+        console.log(data.statuses);
+        tweetReact.renderTweetData(data.statuses);
+      }
     }
-    var failure = function(err) {
+    var failure = function (err) {
       console.log(err);
     }
-    tweetFlow._sendAjaxRequest(urls.searchTweets,{q : 'Real Madrid'},'GET',true,success,failure);
+    tweetFlow._sendAjaxRequest(urls.searchTweets, {q: text || 'John Doe'}, 'GET', true, success, failure);
   }
 };

@@ -1,7 +1,7 @@
 var tweetService = require('../services/tweetService');
 
 exports.searchTweetFeed = function (req, res) {
-  var options = {'count': 10, 'q' : 'Man Utd'};
+  var options = {'count': 10};
   var query = req.query;
   if (typeof query !== 'undefined') {
     for (var prop in query) {
@@ -15,4 +15,4 @@ exports.searchTweetFeed = function (req, res) {
     res.status(500).json(err || {status: 'failure'});
   }
   tweetService.searchTweetFeed(options, success, failure);
-}
+};

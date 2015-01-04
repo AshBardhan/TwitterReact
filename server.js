@@ -1,5 +1,4 @@
 var express = require('express'),
-    twitter = require('twitter'),
     path = require('path'),
     http = require('http'),
     app = express();
