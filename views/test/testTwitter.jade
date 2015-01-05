@@ -1,4 +1,4 @@
-extends ../layout
+extends ../layouts/default
 
 block head
   title Testing #{title}
@@ -26,7 +26,7 @@ block content
             #more-tweets.hide(maxId='') Fetching Tweets ...
 
 block js
-  script(src='../js/build/react.js')
+  script(src='../js/build/react.min.js')
   script(src='../js/build/JSXTransformer.js')
   script(type='text/jsx' src='../js/tweetReact.js')
   script(src='../js/general.js')

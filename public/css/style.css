@@ -209,7 +209,8 @@ img {
   border-radius: 50%;
 }
 #tweet-list .tweet-item .tweet-msg {
-  margin-top: 0.5em;
+  margin-top: 0.25em;
+  font-size: 0.85rem;
 }
 #tweet-list .tweet-item .tweet-user {
   color: #00adef;

@@ -1,5 +1,9 @@
 var tweetService = require('../services/tweetService');
 
+exports.showHomePage = function (req, res) {
+  res.render('home', {title: 'Welcome to Twitter Home Page'});
+};
+
 exports.searchTweetFeed = function (req, res) {
   var options = {'count': 10};
   var query = req.query;
