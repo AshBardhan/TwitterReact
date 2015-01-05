@@ -7,5 +7,5 @@ exports.showTestReactWithoutJSX = function (req, res) {
 };
 
 exports.showTestTwitter = function (req, res) {
-  res.render('test/testTwitter', {title: 'Twitter API!'});
+  res.render('test/testTwitter', {title: 'Twitter API!', pageType: 'search'});
 };

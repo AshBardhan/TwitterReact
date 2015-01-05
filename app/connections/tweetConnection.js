@@ -12,6 +12,15 @@ exports.searchTweetFeed = function(params, successCallback, failureCallback){
   });
 };
 
+exports.searchHomeTimelineFeed = function(params, successCallback, failureCallback){
+  tweet.get('statuses/home_timeline', params, function(err, data, response) {
+    if(err){
+      failureCallback(err);
+    }
+    successCallback(data);
+  });
+};
+
 exports.sendStatusUpdate = function(params, successCallback, failureCallback){
   tweet.post('statuses/update', params, function(err, data, response) {
     if(err){

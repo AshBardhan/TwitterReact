@@ -9,7 +9,7 @@ block content
       .col-md-4#tweet-post
         .row
           .col-xs-12
-            textarea(name='status', maxlength='140', placeholder='Tweet Something')
+            textarea(name='status', maxlength='140', placeholder='Tweet Something Here')
             .row
               .col-xs-6.col-sm-8.col-md-7
                 .tweet-chars 0 / 140
@@ -33,5 +33,5 @@ block js
   script(src='../js/tweet.js')
   script.
     $(document).ready(function(){
-      tweetFlow.initTweetBox('fresh');
+      tweetFlow.initTweetBox('fresh', '#{pageType}');
     });

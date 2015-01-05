@@ -27,15 +27,16 @@ var tweetFlow = {
       $('#tweet-list').append('<div id="tweet-' + section + '"><div>');
     }
   },
-  fetchTweets: function (section, text) {
+  fetchTweets: function (section, pageType, text) {
     var success = function (data) {
-      if (data.statuses.length > 0) {
+      var tweetList = data.statuses ? data.statuses : data;
+      if (tweetList.length > 0) {
         blockMoreFetch = false;
-        tweetReact.renderTweetData(data.statuses, section);
+        tweetReact.renderTweetData(tweetList, section);
         $('#tweet-list').removeClass('hide');
         $('#no-tweet-list, #more-tweets').addClass('hide');
         tweetFlow.updateTweetRender(section);
-        $('#more-tweets').attr('maxId', data.statuses[data.statuses.length - 1].id - 1);
+        $('#more-tweets').attr('maxId', tweetList[tweetList.length - 1].id - 1);
       } else {
         blockMoreFetch = true;
         $('#more-tweets').attr('maxId', '');
@@ -72,7 +73,7 @@ var tweetFlow = {
       $('#no-tweet-list').removeClass('hide').text('Fetching Tweets...');
     }
     blockMoreFetch = true;
-    tweetFlow._sendAjaxRequest(urls.searchTweets, params, 'GET', true, success, failure);
+    tweetFlow._sendAjaxRequest(pageType == 'home' ? urls.homeTimeline : urls.searchTweets, params, 'GET', true, success, failure);
   },
   sendTweet: function (section) {
     var textEle = $('textarea[name=status]');
@@ -113,8 +114,8 @@ var tweetFlow = {
       tweetFlow._sendAjaxRequest(urls.postRetweet, {tweetID: tweetID}, 'POST', true, success, failure);
     }
   },
-  initTweetBox: function (section) {
-    tweetFlow.fetchTweets(section);
+  initTweetBox: function (section, pageType) {
+    tweetFlow.fetchTweets(section, pageType);
     $('textarea[name=status]').on('keyup keypress change', function (e) {
       $('.tweet-chars').html($(this).val().length + ' / 140');
     });
@@ -125,7 +126,7 @@ var tweetFlow = {
       var scrollBottom = $(window).height() + $(window).scrollTop();
       var moreTweetTop = $('#more-tweets').offset().top;
       if (scrollBottom >= moreTweetTop && !blockMoreFetch) {
-        tweetFlow.fetchTweets('archive');
+        tweetFlow.fetchTweets('archive', pageType);
       }
     });
     $('#tweet-list').on('click', '.tweet-actions .tweet-img-sprite', function () {

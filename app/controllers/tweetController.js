@@ -1,7 +1,7 @@
 var tweetService = require('../services/tweetService');
 
 exports.showHomePage = function (req, res) {
-  res.render('home', {title: 'Welcome to Twitter Home Page'});
+  res.render('home', {title: 'Welcome to Twitter Home Page', pageType: 'home'});
 };
 
 exports.searchTweetFeed = function (req, res) {
@@ -19,6 +19,23 @@ exports.searchTweetFeed = function (req, res) {
     res.status(500).json(err || {status: 'failure'});
   }
   tweetService.searchTweetFeed(options, success, failure);
+};
+
+exports.searchHomeTimelineFeed = function (req, res) {
+  var options = {'count': 10, 'result_type': 'recent'};
+  var query = req.query;
+  if (typeof query !== 'undefined') {
+    for (var prop in query) {
+      options[prop] = query[prop];
+    }
+  }
+  var success = function (tweets) {
+    res.json(tweets);
+  }
+  var failure = function (err) {
+    res.status(500).json(err || {status: 'failure'});
+  }
+  tweetService.searchHomeTimelineFeed(options, success, failure);
 };
 
 exports.sendStatusUpdate = function (req, res) {
@@ -60,6 +77,5 @@ exports.favoriteTweet = function (req, res) {
   var failure = function (err) {
     res.status(500).json(err || {status: 'failure'});
   }
-
   tweetService.favoriteTweet(params, success, failure);
 };

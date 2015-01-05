@@ -203,7 +203,14 @@ img {
 #tweet-list .tweet-item > .row {
   margin-top: 0 !important;
 }
-#tweet-list .tweet-item img {
+#tweet-list .tweet-item .tweet-img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #dddddd;
+  display: inline-block;
+}
+#tweet-list .tweet-item .tweet-img img {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
