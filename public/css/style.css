@@ -191,6 +191,12 @@ img {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
+header {
+  background-color: #c7c7c7;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 1.5em;
+}
 #tweet-list .tweet-item {
   margin-bottom: 1em;
   border: 2px solid #dddddd;

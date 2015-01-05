@@ -2,10 +2,11 @@ doctype html
 html
   head
     link(rel='stylesheet', href='/css/style.css')
-    link(rel='stylesheet', href='/css/utils/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/utils/bootstrap.min.custom.css')
     link(rel='stylesheet', href='/css/utils/bootstrap-grid.custom.css')
     block head
   body
+    include header
     .main-content
       .content
         block content
