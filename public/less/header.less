@@ -1,0 +1,39 @@
+header {
+  .bkground-dark;
+  width: 100%;
+  padding-bottom: @padding-base;
+  margin-bottom: @margin-medium;
+  > .content {
+    max-width: @max-width;
+    margin: 0px auto;
+  }
+  .btn {
+    padding: @padding-base @padding-medium !important;
+    .text-base;
+  }
+  input[name=search] {
+    width: 100%;
+    .text-white;
+    background: transparent;
+    border: @border-width-thick @border-style-base @border-color-white !important;
+    .brdr-radius-base;
+    padding: @padding-medium;
+    .text-medium;
+    &:focus {
+      box-shadow: none !important;
+    }
+    &::-webkit-input-placeholder {
+      .text-white;
+    }
+    &:-moz-placeholder {
+      .text-white;
+    }
+    &::-moz-placeholder {
+      .text-white;
+    }
+    &:-ms-input-placeholder {
+      .text-white;
+    }
+  }
+
+}
