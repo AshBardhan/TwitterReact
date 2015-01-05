@@ -6,7 +6,12 @@ exports.showHomePage = function (req, res) {
 
 exports.showUserPage = function (req, res) {
   var username = req.params.username;
-  res.render('user', {title: 'Twitter | Welcome to '+ username +'\'s Timeline', pageType: 'user', username: username});
+  res.render('user', {title: 'Twitter | Welcome to ' + username + '\'s Timeline', pageType: 'user', username: username});
+};
+
+exports.showSearchPage = function (req, res) {
+  var search = decodeURIComponent(req.params.search);
+  res.render('search', {title: 'Twitter | Searching for Tweets with text \'' + search + '\'', pageType: 'search', search: search});
 };
 
 exports.searchTweetFeed = function (req, res) {

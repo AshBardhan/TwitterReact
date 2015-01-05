@@ -27,7 +27,7 @@ var tweetFlow = {
       $('#tweet-list').append('<div id="tweet-' + section + '"><div>');
     }
   },
-  fetchTweets: function (section, pageType, username, text) {
+  fetchTweets: function (section, pageType, username, searchText) {
     var success = function (data) {
       var tweetList = data.statuses ? data.statuses : data;
       if (tweetList.length > 0) {
@@ -62,9 +62,9 @@ var tweetFlow = {
     }
     var maxId = $('#more-tweets').attr('maxId');
     var params = {
-      q: text || 'JavaScript'
+      q: searchText || 'JavaScript'
     };
-    if (username) {
+    if (username && username !== '') {
       params.screen_name = username;
     }
     if (maxId) {
@@ -117,8 +117,8 @@ var tweetFlow = {
       tweetFlow._sendAjaxRequest(urls.postRetweet, {tweetID: tweetID}, 'POST', true, success, failure);
     }
   },
-  initTweetBox: function (section, pageType, username) {
-    tweetFlow.fetchTweets(section, pageType, username);
+  initTweetBox: function (section, pageType, username, searchText) {
+    tweetFlow.fetchTweets(section, pageType, username, searchText);
     $('textarea[name=status]').on('keyup keypress change', function (e) {
       $('.tweet-chars').html($(this).val().length + ' / 140');
     });
@@ -129,7 +129,13 @@ var tweetFlow = {
       var scrollBottom = $(window).height() + $(window).scrollTop();
       var moreTweetTop = $('#more-tweets').offset().top;
       if (scrollBottom >= moreTweetTop && !blockMoreFetch) {
-        tweetFlow.fetchTweets('archive', pageType, username);
+        tweetFlow.fetchTweets('archive', pageType, username, searchText);
+      }
+    });
+    $('#tweetSearch').on('keyup', function (e) {
+      var text = $(this).val();
+      if (e.which == 13 && text.length > 0) {
+        location.href = '/search/' + encodeURIComponent(text);
       }
     });
     $('#tweet-list').on('click', '.tweet-actions .tweet-img-sprite', function () {
@@ -142,5 +148,8 @@ var tweetFlow = {
         tweetFlow.favoriteTweet(tweetID, button);
       }
     });
+    $('.btn[name=home]').on('click', function () {
+      location.href = '/';
+    })
   }
 };

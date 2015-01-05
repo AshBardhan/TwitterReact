@@ -15,6 +15,7 @@ exports.urls = {
   WEB: {
     HOME_PAGE: '/',
     USER_PAGE: '/user/:username',
+    SEARCH_PAGE: '/search/:search',
     TEST_REACT_JS: '/test/reactJS',
     TEST_REACT_JSX: '/test/reactJSX',
     TEST_TWITTER: '/test/twitter'

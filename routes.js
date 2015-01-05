@@ -9,6 +9,7 @@ module.exports = function (app) {
   app.post(urls.API.FAV_TWEET, tweetController.favoriteTweet);
   app.get(urls.WEB.HOME_PAGE, tweetController.showHomePage);
   app.get(urls.WEB.USER_PAGE, tweetController.showUserPage);
+  app.get(urls.WEB.SEARCH_PAGE, tweetController.showSearchPage);
 
   var testController = require('./app/controllers/testController');
   app.get(urls.WEB.TEST_REACT_JSX, testController.showTestReactJSX);
