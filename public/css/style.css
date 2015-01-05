@@ -217,6 +217,10 @@ img {
   font-size: 1.15rem;
   font-weight: bold;
 }
+#tweet-list .tweet-item .tweet-actions {
+  padding: 0.5em 0 0;
+  text-align: center;
+}
 #tweet-post {
   margin-bottom: 1em;
 }
@@ -249,4 +253,41 @@ img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+.tweet-img-sprite {
+  background: url('../images/twitter-sprite.png') no-repeat top left;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 2.5em;
+}
+.tweet-img-sprite:last-child {
+  margin-right: 0;
+}
+.tweet-img-sprite.reply {
+  background-position: 0 0;
+}
+.tweet-img-sprite.reply:hover,
+.tweet-img-sprite.reply:focus {
+  background-position: -16px 0;
+}
+.tweet-img-sprite.favorite {
+  background-position: -32px 0;
+}
+.tweet-img-sprite.favorite:hover,
+.tweet-img-sprite.favorite:focus {
+  background-position: -48px 0;
+}
+.tweet-img-sprite.favorite.done {
+  background-position: -64px 0;
+}
+.tweet-img-sprite.retweet {
+  background-position: -176px 0;
+}
+.tweet-img-sprite.retweet:hover,
+.tweet-img-sprite.retweet:focus {
+  background-position: -192px 0;
+}
+.tweet-img-sprite.retweet.done {
+  background-position: -240px 0;
 }
