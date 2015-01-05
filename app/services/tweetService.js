@@ -8,6 +8,10 @@ exports.searchHomeTimelineFeed = function (params, successCallback, failureCallb
   tweetConnection.searchHomeTimelineFeed(params, successCallback, failureCallback);
 };
 
+exports.searchUserTimelineFeed = function (params, successCallback, failureCallback) {
+  tweetConnection.searchUserTimelineFeed(params, successCallback, failureCallback);
+};
+
 exports.sendStatusUpdate = function (params, successCallback, failureCallback) {
   tweetConnection.sendStatusUpdate(params, successCallback, failureCallback);
 };

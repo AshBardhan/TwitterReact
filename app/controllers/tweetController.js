@@ -1,7 +1,12 @@
 var tweetService = require('../services/tweetService');
 
 exports.showHomePage = function (req, res) {
-  res.render('home', {title: 'Welcome to Twitter Home Page', pageType: 'home'});
+  res.render('home', {title: 'Twitter | Welcome to your Home Timeline', pageType: 'home'});
+};
+
+exports.showUserPage = function (req, res) {
+  var username = req.params.username;
+  res.render('user', {title: 'Twitter | Welcome to '+ username +'\'s Timeline', pageType: 'user', username: username});
 };
 
 exports.searchTweetFeed = function (req, res) {
@@ -36,6 +41,23 @@ exports.searchHomeTimelineFeed = function (req, res) {
     res.status(500).json(err || {status: 'failure'});
   }
   tweetService.searchHomeTimelineFeed(options, success, failure);
+};
+
+exports.searchUserTimelineFeed = function (req, res) {
+  var options = {'count': 10, 'result_type': 'recent'};
+  var query = req.query;
+  if (typeof query !== 'undefined') {
+    for (var prop in query) {
+      options[prop] = query[prop];
+    }
+  }
+  var success = function (tweets) {
+    res.json(tweets);
+  }
+  var failure = function (err) {
+    res.status(500).json(err || {status: 'failure'});
+  }
+  tweetService.searchUserTimelineFeed(options, success, failure);
 };
 
 exports.sendStatusUpdate = function (req, res) {
