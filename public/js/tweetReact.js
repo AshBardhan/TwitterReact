@@ -18,7 +18,7 @@ var tweetReact = {
                 </div>
                 <div className='col-xs-12'>
                   <div className='tweet-actions'>
-                    <div className='tweet-img-sprite' type='reply' data-id={this.props.id} title='Reply'></div>
+                    <div className='tweet-img-sprite' type='reply' data-username={this.props.username} data-id={this.props.id} title='Reply'></div>
                     <div className={this.props.favorited ?'tweet-img-sprite done':'tweet-img-sprite'} type='favorite' data-id={this.props.id} title='Favorite'></div>
                     <div className={this.props.retweeted ?'tweet-img-sprite done':'tweet-img-sprite'} type='retweet' data-id={this.props.id} title='Retweet'></div>
                   </div>

@@ -1,12 +1,12 @@
 var tweetService = require('../services/tweetService');
 
 exports.showHomePage = function (req, res) {
-  res.render('home', {title: 'Twitter | Welcome to your Home Timeline', pageType: 'home'});
+  res.render('home', {title: 'Twitter | Your Home Timeline', pageType: 'home'});
 };
 
 exports.showUserPage = function (req, res) {
   var username = req.params.username;
-  res.render('user', {title: 'Twitter | Welcome to ' + username + '\'s Timeline', pageType: 'user', username: username});
+  res.render('user', {title: 'Twitter | ' + username + '\'s Timeline', pageType: 'user', username: username});
 };
 
 exports.showSearchPage = function (req, res) {

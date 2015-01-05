@@ -80,10 +80,11 @@ var tweetFlow = {
   },
   sendTweet: function (section, pageType) {
     var textEle = $('textarea[name=status]');
+    var tweetID = $('#tweetModal #tweet-btn').attr('tweetID') || '';
     if (textEle.val().length > 0 && !textEle.attr('readonly')) {
       var success = function (data) {
         console.log(data);
-        if(pageType === 'home') {
+        if (pageType === 'home') {
           tweetReact.renderTweetData([data], section);
           tweetFlow.updateTweetRender(section);
         }
@@ -98,8 +99,16 @@ var tweetFlow = {
         textEle.removeAttr('readonly');
       }
       textEle.attr('readonly', true);
-      tweetFlow._sendAjaxRequest(urls.postTweet, {status: textEle.val()}, 'POST', true, success, failure);
+      tweetFlow._sendAjaxRequest(urls.postTweet, {status: textEle.val(), in_reply_to_status_id: tweetID}, 'POST', true, success, failure);
     }
+  },
+  replyTweet: function (tweetID, tweetUsername) {
+    $('#tweetModal .modal-body').removeClass('hide');
+    $('#tweetModal .modal-alert').addClass('hide');
+    $('#tweetModal textarea').val('@' + tweetUsername + ' ');
+    $('#tweetModal #tweet-btn').attr('tweetID', tweetID);
+    $('#tweetModal .tweet-chars').text((tweetUsername.length + 2) + ' / 140');
+    $('#tweetModal').modal({backdrop: 'static', keyboard: true});
   },
   favoriteTweet: function (tweetID, favButton) {
     if (!favButton.hasClass('done')) {
@@ -124,15 +133,15 @@ var tweetFlow = {
     }
   },
   initModal: function () {
-    $(document).keyup(function(e){
+    $(document).keyup(function (e) {
       if (e.which == 27 && $('#tweetModal').is(':visible')) {
         $('#tweetModal').modal('hide');
         $('#tweetModal textarea').val('');
         $('#tweetModal .tweet-chars').text('0 / 140');
+        $('#tweetModal #tweet-btn').removeAttr('tweetID')
       }
     });
   },
-
   initTweetBox: function (section, pageType, username, searchText) {
     tweetFlow.fetchTweets(section, pageType, username, searchText);
     tweetFlow.initModal();
@@ -163,6 +172,9 @@ var tweetFlow = {
         tweetFlow.reTweet(tweetID, button);
       } else if (buttonType === 'favorite') {
         tweetFlow.favoriteTweet(tweetID, button);
+      } else {
+        var username = button.attr('data-username');
+        tweetFlow.replyTweet(tweetID, username);
       }
     });
     $('.btn[name=home]').on('click', function () {
