@@ -1,0 +1,33 @@
+.modal {
+  .brdr-radius-base;
+  left: 50% !important;
+  top: 50% !important;
+  .modal-body, .modal-alert {
+    .text-small;
+    padding: @padding-large @padding-medium;
+  }
+}
+
+#tweetModal {
+  width: 300px;
+  margin-left: -150px;
+  margin-top: -145px;
+  padding: @padding-base;
+  textarea {
+    width: 100%;
+    border: @border-width-thick @border-style-base @border-color-light;
+    .brdr-radius-base;
+    padding: @padding-base;
+    height: 200px;
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+  #tweet-btn {
+    width: 100% !important;
+  }
+  .tweet-chars {
+    .text-bold;
+    margin-top: @margin-base;
+  }
+}

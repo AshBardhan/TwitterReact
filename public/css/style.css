@@ -138,7 +138,7 @@ img {
   font-size: 1.3rem;
 }
 .hide {
-  display: none !important;
+  display: none;
 }
 .row {
   margin-top: 1em;
@@ -300,6 +300,43 @@ header input[name=search]::-moz-placeholder {
 }
 header input[name=search]:-ms-input-placeholder {
   color: #ffffff;
+}
+.modal {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  left: 50% !important;
+  top: 50% !important;
+}
+.modal .modal-body,
+.modal .modal-alert {
+  font-size: 0.85rem;
+  padding: 1.5em 1em;
+}
+#tweetModal {
+  width: 300px;
+  margin-left: -150px;
+  margin-top: -145px;
+  padding: 0.5em;
+}
+#tweetModal textarea {
+  width: 100%;
+  border: 2px solid #dddddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0.5em;
+  height: 200px;
+}
+#tweetModal textarea:focus {
+  box-shadow: none !important;
+}
+#tweetModal #tweet-btn {
+  width: 100% !important;
+}
+#tweetModal .tweet-chars {
+  font-weight: bold;
+  margin-top: 0.5em;
 }
 .tweet-img-sprite {
   background: url('../images/twitter-sprite.png') no-repeat top left;

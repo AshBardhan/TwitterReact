@@ -6,16 +6,7 @@ block head
 block content
   .container-fluid
     .row
-      .col-md-4#tweet-post
-        .row
-          .col-xs-12
-            textarea(name='status', maxlength='140', placeholder='Tweet Something Here')
-            .row
-              .col-xs-6.col-sm-8.col-md-7
-                .tweet-chars 0 / 140
-              .col-xs-6.col-sm-4.col-md-5
-                .btn.btn-primary#tweet-btn Tweet
-      .col-md-8
+      .col-md-8.col-md-offset-2
         .row
           .col-xs-12
             #tweet-notify.hide

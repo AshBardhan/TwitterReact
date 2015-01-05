@@ -78,17 +78,23 @@ var tweetFlow = {
     blockMoreFetch = true;
     tweetFlow._sendAjaxRequest(pageType == 'home' ? urls.homeTimeline : (pageType == 'user') ? urls.userTimeline : urls.searchTweets, params, 'GET', true, success, failure);
   },
-  sendTweet: function (section) {
+  sendTweet: function (section, pageType) {
     var textEle = $('textarea[name=status]');
     if (textEle.val().length > 0 && !textEle.attr('readonly')) {
       var success = function (data) {
         console.log(data);
-        tweetReact.renderTweetData([data], section);
-        tweetFlow.updateTweetRender(section);
+        if(pageType === 'home') {
+          tweetReact.renderTweetData([data], section);
+          tweetFlow.updateTweetRender(section);
+        }
+        $('#tweetModal .modal-body').addClass('hide');
+        $('#tweetModal .modal-alert').removeClass('hide').html('Your Tweet has been posted');
         textEle.removeAttr('readonly');
       }
       var failure = function (data) {
         console.log(data);
+        $('#tweetModal .modal-body').addClass('hide');
+        $('#tweetModal .modal-alert').removeClass('hide').html('Your Tweet was not posted due to some problems <br/> Please try again');
         textEle.removeAttr('readonly');
       }
       textEle.attr('readonly', true);
@@ -117,13 +123,24 @@ var tweetFlow = {
       tweetFlow._sendAjaxRequest(urls.postRetweet, {tweetID: tweetID}, 'POST', true, success, failure);
     }
   },
+  initModal: function () {
+    $(document).keyup(function(e){
+      if (e.which == 27 && $('#tweetModal').is(':visible')) {
+        $('#tweetModal').modal('hide');
+        $('#tweetModal textarea').val('');
+        $('#tweetModal .tweet-chars').text('0 / 140');
+      }
+    });
+  },
+
   initTweetBox: function (section, pageType, username, searchText) {
     tweetFlow.fetchTweets(section, pageType, username, searchText);
+    tweetFlow.initModal();
     $('textarea[name=status]').on('keyup keypress change', function (e) {
       $('.tweet-chars').html($(this).val().length + ' / 140');
     });
     $('#tweet-btn').on('click', function () {
-      tweetFlow.sendTweet(section);
+      tweetFlow.sendTweet(section, pageType);
     });
     $(window).scroll(function () {
       var scrollBottom = $(window).height() + $(window).scrollTop();
@@ -150,6 +167,11 @@ var tweetFlow = {
     });
     $('.btn[name=home]').on('click', function () {
       location.href = '/';
-    })
+    });
+    $('.btn[name=composeTweet]').on('click', function () {
+      $('#tweetModal .modal-body').removeClass('hide');
+      $('#tweetModal .modal-alert').addClass('hide');
+      $('#tweetModal').modal({backdrop: 'static', keyboard: true});
+    });
   }
 };
