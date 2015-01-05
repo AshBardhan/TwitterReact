@@ -3,7 +3,7 @@
     margin-bottom: @margin-medium;
     border: @border-width-thick @border-style-base @border-color-light;
     padding: @padding-medium;
-    .bkground-lighter;
+    .bkground-white;
     .brdr-radius-base;
     > .row {
       margin-top: 0 !important;
@@ -26,14 +26,29 @@
   margin-bottom: @margin-medium;
   textarea {
     width: 100%;
+    border: @border-width-thick @border-style-base @border-color-light;
+    .brdr-radius-base;
     padding: @padding-base;
     height: 100px;
+    &:focus {
+      box-shadow: none !important;
+    }
   }
   #tweet-btn {
     width: 100% !important;
   }
-  .tweet-chars{
+  .tweet-chars {
     .text-bold;
     margin-top: @margin-base;
   }
+}
+
+#no-tweet-list, #more-tweets {
+  padding: @padding-medium @padding-base;
+  .text-center;
+  .text-bold;
+  border: @border-width-thick @border-style-base @border-color-light;
+  .bkground-white;
+  .brdr-radius-base;
+
 }

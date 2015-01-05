@@ -1,7 +1,7 @@
 /*** @jsx React.DOM */
 
 var tweetReact = {
-  renderTweetData : function(tweets) {
+  renderTweetData: function (tweets, section) {
     var Tweet = React.createClass({
       render: function () {
         return (
@@ -21,20 +21,18 @@ var tweetReact = {
             )
       }
     });
-
     var TweetList = React.createClass({
       render: function () {
         var tweetItem = this.props.data.map(function (tweet) {
           return <Tweet text={tweet.text} username={tweet.user.screen_name} imgUrl={tweet.user.profile_image_url} />
         });
         return (
-            <div id='tweet-item-list'>
+            <div className='tweet-item-list'>
               {tweetItem}
             </div>
             )
       }
     });
-
-    React.render(<TweetList data={tweets} />, document.getElementById('tweet-list'));
+    React.render(<TweetList data={tweets} />, document.getElementById('tweet-' + section));
   }
 };

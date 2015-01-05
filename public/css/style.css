@@ -27,6 +27,7 @@ body {
   min-width: 320px;
   margin: 0;
   font-size: 1rem !important;
+  background-color: #fcfcfc !important;
 }
 h1 {
   font-size: 1.3rem;
@@ -137,7 +138,7 @@ img {
   font-size: 1.3rem;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 .row {
   margin-top: 1em;
@@ -194,7 +195,7 @@ img {
   margin-bottom: 1em;
   border: 2px solid #dddddd;
   padding: 1em;
-  background-color: #fcfcfc;
+  background-color: #ffffff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -220,8 +221,15 @@ img {
 }
 #tweet-post textarea {
   width: 100%;
+  border: 2px solid #dddddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   padding: 0.5em;
   height: 100px;
+}
+#tweet-post textarea:focus {
+  box-shadow: none !important;
 }
 #tweet-post #tweet-btn {
   width: 100% !important;
@@ -229,4 +237,15 @@ img {
 #tweet-post .tweet-chars {
   font-weight: bold;
   margin-top: 0.5em;
+}
+#no-tweet-list,
+#more-tweets {
+  padding: 1em 0.5em;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #dddddd;
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }

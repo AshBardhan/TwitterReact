@@ -21,14 +21,17 @@ block content
             #tweet-notify.hide
             #no-tweet-list Fetching Tweets ...
             #tweet-list.hide
+              #tweet-fresh
+              #tweet-archive
+            #more-tweets.hide(maxId='') Fetching Tweets ...
 
 block js
-  script(src='../js/build/react.min.js')
+  script(src='../js/build/react.js')
   script(src='../js/build/JSXTransformer.js')
   script(type='text/jsx' src='../js/tweetReact.js')
   script(src='../js/general.js')
   script(src='../js/tweet.js')
   script.
     $(document).ready(function(){
-      tweetFlow.initTweetBox();
+      tweetFlow.initTweetBox('fresh');
     });
