@@ -5,7 +5,7 @@ exports.showHomePage = function (req, res) {
 };
 
 exports.searchTweetFeed = function (req, res) {
-  var options = {'count': 10};
+  var options = {'count': 10, 'result_type': 'recent'};
   var query = req.query;
   if (typeof query !== 'undefined') {
     for (var prop in query) {
@@ -21,7 +21,7 @@ exports.searchTweetFeed = function (req, res) {
   tweetService.searchTweetFeed(options, success, failure);
 };
 
-exports.sendStatusUpdate = function(req, res) {
+exports.sendStatusUpdate = function (req, res) {
   var options = {};
   var body = req.body;
   if (typeof body !== 'undefined') {
@@ -36,4 +36,30 @@ exports.sendStatusUpdate = function(req, res) {
     res.status(500).json(err || {status: 'failure'});
   }
   tweetService.sendStatusUpdate(options, success, failure);
+};
+
+exports.retweetStatusUpdate = function (req, res) {
+  var tweetID = req.body.tweetID;
+  var success = function (data) {
+    res.json(data);
+  }
+  var failure = function (err) {
+    res.status(500).json(err || {status: 'failure'});
+  }
+  tweetService.retweetStatusUpdate(tweetID, success, failure);
+};
+
+
+exports.favoriteTweet = function (req, res) {
+  var params = {
+    id: req.body.tweetID
+  };
+  var success = function (data) {
+    res.json(data);
+  }
+  var failure = function (err) {
+    res.status(500).json(err || {status: 'failure'});
+  }
+
+  tweetService.favoriteTweet(params, success, failure);
 };

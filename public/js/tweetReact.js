@@ -18,9 +18,9 @@ var tweetReact = {
                 </div>
                 <div className='col-xs-12'>
                   <div className='tweet-actions'>
-                    <div className='tweet-img-sprite reply' data-id={this.props.id} title='Reply'></div>
-                    <div className='tweet-img-sprite favorite' data-id={this.props.id} title='Favorite'></div>
-                    <div className='tweet-img-sprite retweet' data-id={this.props.id} title='Retweet'></div>
+                    <div className='tweet-img-sprite' type='reply' data-id={this.props.id} title='Reply'></div>
+                    <div className={this.props.favorited ?'tweet-img-sprite done':'tweet-img-sprite'} type='favorite' data-id={this.props.id} title='Favorite'></div>
+                    <div className={this.props.retweeted ?'tweet-img-sprite done':'tweet-img-sprite'} type='retweet' data-id={this.props.id} title='Retweet'></div>
                   </div>
                 </div>
               </div>
@@ -31,7 +31,8 @@ var tweetReact = {
     var TweetList = React.createClass({
       render: function () {
         var tweetItem = this.props.data.map(function (tweet) {
-          return <Tweet text={tweet.text} username={tweet.user.screen_name} imgUrl={tweet.user.profile_image_url} id={tweet.id} />
+          return (<Tweet text={tweet.text} username={tweet.user.screen_name} imgUrl={tweet.user.profile_image_url} id={tweet.id_str}
+                        retweeted={tweet.retweeted} favorited={tweet.favorited} />)
         });
         return (
             <div className='tweet-item-list'>

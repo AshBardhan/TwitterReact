@@ -264,30 +264,30 @@ img {
 .tweet-img-sprite:last-child {
   margin-right: 0;
 }
-.tweet-img-sprite.reply {
+.tweet-img-sprite[type=reply] {
   background-position: 0 0;
 }
-.tweet-img-sprite.reply:hover,
-.tweet-img-sprite.reply:focus {
+.tweet-img-sprite[type=reply]:hover,
+.tweet-img-sprite[type=reply]:focus {
   background-position: -16px 0;
 }
-.tweet-img-sprite.favorite {
+.tweet-img-sprite[type=favorite] {
   background-position: -32px 0;
 }
-.tweet-img-sprite.favorite:hover,
-.tweet-img-sprite.favorite:focus {
+.tweet-img-sprite[type=favorite]:hover,
+.tweet-img-sprite[type=favorite]:focus {
   background-position: -48px 0;
 }
-.tweet-img-sprite.favorite.done {
+.tweet-img-sprite[type=favorite].done {
   background-position: -64px 0;
 }
-.tweet-img-sprite.retweet {
+.tweet-img-sprite[type=retweet] {
   background-position: -176px 0;
 }
-.tweet-img-sprite.retweet:hover,
-.tweet-img-sprite.retweet:focus {
+.tweet-img-sprite[type=retweet]:hover,
+.tweet-img-sprite[type=retweet]:focus {
   background-position: -192px 0;
 }
-.tweet-img-sprite.retweet.done {
+.tweet-img-sprite[type=retweet].done {
   background-position: -240px 0;
 }

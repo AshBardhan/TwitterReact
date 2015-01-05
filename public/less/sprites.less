@@ -7,13 +7,13 @@
   &:last-child {
     margin-right: 0;
   }
-  &.reply {
+  &[type=reply] {
     background-position: 0 0;
     &:hover, &:focus {
       background-position: -16px 0;
     }
   }
-  &.favorite {
+  &[type=favorite] {
     background-position: -32px 0;
     &:hover, &:focus {
       background-position: -48px 0;
@@ -22,7 +22,7 @@
       background-position: -64px 0;
     }
   }
-  &.retweet {
+  &[type=retweet] {
     background-position: -176px 0;
     &:hover, &:focus {
       background-position: -192px 0;

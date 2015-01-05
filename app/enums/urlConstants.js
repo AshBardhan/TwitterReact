@@ -7,7 +7,8 @@ exports.urls = {
   API: {
     SEARCH_TWEETS: API_VERSION.v1 + '/tweet/search',
     POST_TWEET: API_VERSION.v1 + '/tweet/post',
-    RE_TWEET: API_VERSION.v1 + '/tweet/RT'
+    POST_RETWEET: API_VERSION.v1 + '/tweet/RT/post',
+    FAV_TWEET: API_VERSION.v1 + '/tweet/fav/post'
   },
   WEB: {
     HOME_PAGE: '/',
