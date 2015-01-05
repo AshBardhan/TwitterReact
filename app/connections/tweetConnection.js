@@ -15,4 +15,13 @@ exports.searchTweetFeed = function(params, successCallback, failureCallback){
     }
     successCallback(data);
   });
-}
+};
+
+exports.sendStatusUpdate = function(params, successCallback, failureCallback){
+  tweet.post('statuses/update', params, function(err, data, response) {
+    if(err){
+      failureCallback(err);
+    }
+    successCallback(data);
+  });
+};

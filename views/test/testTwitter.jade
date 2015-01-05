@@ -5,7 +5,22 @@ block head
 
 block content
   .container-fluid
-    #example
+    .row
+      .col-md-4#tweet-post
+        .row
+          .col-xs-12
+            textarea(name='status', maxlength='140', placeholder='Tweet Something')
+            .row
+              .col-xs-6.col-sm-8.col-md-7
+                .tweet-chars 0 / 140
+              .col-xs-6.col-sm-4.col-md-5
+                .btn.btn-primary#tweet-btn Tweet
+      .col-md-8
+        .row
+          .col-xs-12
+            #tweet-notify.hide
+            #no-tweet-list Fetching Tweets ...
+            #tweet-list.hide
 
 block js
   script(src='../js/build/react.min.js')
@@ -15,5 +30,5 @@ block js
   script(src='../js/tweet.js')
   script.
     $(document).ready(function(){
-      tweetFlow.fetchTweets();
+      tweetFlow.initTweetBox();
     });

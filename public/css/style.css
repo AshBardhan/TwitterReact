@@ -190,7 +190,8 @@ img {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-.tweet-item {
+#tweet-list .tweet-item {
+  margin-bottom: 1em;
   border: 2px solid #dddddd;
   padding: 1em;
   background-color: #fcfcfc;
@@ -198,16 +199,34 @@ img {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-.tweet-item img {
+#tweet-list .tweet-item > .row {
+  margin-top: 0 !important;
+}
+#tweet-list .tweet-item img {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-.tweet-item .tweet-msg {
+#tweet-list .tweet-item .tweet-msg {
   margin-top: 0.5em;
 }
-.tweet-item .tweet-user {
+#tweet-list .tweet-item .tweet-user {
   color: #00adef;
   font-size: 1.15rem;
   font-weight: bold;
+}
+#tweet-post {
+  margin-bottom: 1em;
+}
+#tweet-post textarea {
+  width: 100%;
+  padding: 0.5em;
+  height: 100px;
+}
+#tweet-post #tweet-btn {
+  width: 100% !important;
+}
+#tweet-post .tweet-chars {
+  font-weight: bold;
+  margin-top: 0.5em;
 }

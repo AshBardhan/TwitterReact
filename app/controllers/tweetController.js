@@ -16,3 +16,20 @@ exports.searchTweetFeed = function (req, res) {
   }
   tweetService.searchTweetFeed(options, success, failure);
 };
+
+exports.sendStatusUpdate = function(req, res) {
+  var options = {};
+  var body = req.body;
+  if (typeof body !== 'undefined') {
+    for (var prop in body) {
+      options[prop] = body[prop];
+    }
+  }
+  var success = function (data) {
+    res.json(data);
+  }
+  var failure = function (err) {
+    res.status(500).json(err || {status: 'failure'});
+  }
+  tweetService.sendStatusUpdate(options, success, failure);
+};

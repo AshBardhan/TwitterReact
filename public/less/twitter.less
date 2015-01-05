@@ -1,17 +1,39 @@
-.tweet-item {
-  border: @border-width-thick @border-style-base @border-color-light;
-  padding: @padding-medium;
-  .bkground-lighter;
-  .brdr-radius-base;
-  img {
-    .brdr-radius-circle;
+#tweet-list {
+  .tweet-item {
+    margin-bottom: @margin-medium;
+    border: @border-width-thick @border-style-base @border-color-light;
+    padding: @padding-medium;
+    .bkground-lighter;
+    .brdr-radius-base;
+    > .row {
+      margin-top: 0 !important;
+    }
+    img {
+      .brdr-radius-circle;
+    }
+    .tweet-msg {
+      margin-top: @margin-base;
+    }
+    .tweet-user {
+      .text-blue;
+      .text-medium;
+      .text-bold;
+    }
   }
-  .tweet-msg {
-    margin-top: @margin-base;
+}
+
+#tweet-post {
+  margin-bottom: @margin-medium;
+  textarea {
+    width: 100%;
+    padding: @padding-base;
+    height: 100px;
   }
-  .tweet-user {
-    .text-blue;
-    .text-medium;
+  #tweet-btn {
+    width: 100% !important;
+  }
+  .tweet-chars{
     .text-bold;
+    margin-top: @margin-base;
   }
 }
