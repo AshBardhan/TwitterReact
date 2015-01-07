@@ -141,6 +141,9 @@ var tweetFlow = {
         $('#tweetModal #tweet-btn').removeAttr('tweetID')
       }
     });
+    $('#tweetModal').on('shown', function () {
+      $(this).find('textarea[autofocus]').focus();
+    });
   },
   initTweetBox: function (section, pageType, username, searchText) {
     tweetFlow.fetchTweets(section, pageType, username, searchText);

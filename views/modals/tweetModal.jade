@@ -1,7 +1,7 @@
 #tweetModal.modal.hide.fade
   //.modal-close.v1 X
   .modal-body
-    textarea(name='status', maxlength='140', placeholder='Tweet Something Here')
+    textarea(name='status', maxlength='140', placeholder='Tweet Something Here', autofocus, onfocus='this.value=this.value')
     .row
       .col-xs-6
         .tweet-chars 0 / 140
