@@ -19,6 +19,14 @@ exports.urls = {
     TEST_REACT_JS: '/test/reactJS',
     TEST_REACT_JSX: '/test/reactJSX',
     TEST_TWITTER: '/test/twitter'
+  },
+  TWITTER : {
+    SEARCH : 'search/tweets',
+    HOME_TIMELINE : 'statuses/home_timeline',
+    USER_TIMELINE : 'statuses/user_timeline',
+    TWEET : 'statuses/update',
+    RETWEET : 'statuses/retweet/',
+    FAVORITE : 'favorites/create'
   }
 };
 

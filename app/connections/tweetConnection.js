@@ -3,8 +3,8 @@ var twitter = require('twitter'),
 
 var tweet =  new twitter(config);
 
-exports.searchTweetFeed = function(params, successCallback, failureCallback){
-  tweet.get('search/tweets', params, function(err, data, response) {
+exports.getTweetRequest = function(url, params, successCallback, failureCallback){
+  tweet.get(url, params, function(err, data, response) {
     if(err){
       failureCallback(err);
     }
@@ -12,44 +12,8 @@ exports.searchTweetFeed = function(params, successCallback, failureCallback){
   });
 };
 
-exports.searchHomeTimelineFeed = function(params, successCallback, failureCallback){
-  tweet.get('statuses/home_timeline', params, function(err, data, response) {
-    if(err){
-      failureCallback(err);
-    }
-    successCallback(data);
-  });
-};
-
-exports.searchUserTimelineFeed = function(params, successCallback, failureCallback){
-  tweet.get('statuses/user_timeline', params, function(err, data, response) {
-    if(err){
-      failureCallback(err);
-    }
-    successCallback(data);
-  });
-};
-
-exports.sendStatusUpdate = function(params, successCallback, failureCallback){
-  tweet.post('statuses/update', params, function(err, data, response) {
-    if(err){
-      failureCallback(err);
-    }
-    successCallback(data);
-  });
-};
-
-exports.retweetStatusUpdate = function(tweetID, successCallback, failureCallback){
-  tweet.post('statuses/retweet/'+tweetID, {}, function(err, data, response) {
-    if(err){
-      failureCallback(err);
-    }
-    successCallback(data);
-  });
-};
-
-exports.favoriteTweet = function(params, successCallback, failureCallback){
-  tweet.post('favorites/create', params, function(err, data, response) {
+exports.postTweetRequest = function(url, params, successCallback, failureCallback){
+  tweet.post(url, params, function(err, data, response) {
     if(err){
       failureCallback(err);
     }
