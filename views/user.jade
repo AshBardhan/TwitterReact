@@ -1,28 +1,28 @@
 extends layouts/default
 
 block head
-  title #{title}
+	title #{title}
 
 block content
-  .container-fluid
-    .row
-      .col-md-8.col-md-offset-2
-        .row
-          .col-xs-12
-            #tweet-notify.hide
-            #no-tweet-list Fetching Tweets ...
-            #tweet-list.hide
-              #tweet-fresh
-              #tweet-archive
-            #more-tweets.hide(maxId='') Fetching Tweets ...
+	.container-fluid
+		.row
+			.col-md-8.col-md-offset-2
+				.row
+					.col-xs-12
+						#tweet-notify.hide
+						#no-tweet-list Fetching Tweets ...
+						#tweet-list.hide
+							#tweet-fresh
+							#tweet-archive
+						#more-tweets.hide(maxId='') Fetching Tweets ...
 
 block js
-  script(src='../js/build/react.min.js')
-  script(src='../js/build/JSXTransformer.js')
-  script(type='text/jsx' src='../js/tweetReact.js')
-  script(src='../js/general.js')
-  script(src='../js/tweet.js')
-  script.
-    $(document).ready(function(){
-      tweetFlow.initTweetBox('fresh', '#{pageType}', '#{username}');
-    });
+	script(src='../js/build/react.min.js')
+	script(src='../js/build/JSXTransformer.js')
+	script(type='text/jsx' src='../js/tweetReact.js')
+	script(src='../js/general.js')
+	script(src='../js/tweet.js')
+	script.
+		$(document).ready(function(){
+			tweetFlow.initTweetBox('fresh', '#{pageType}', '#{username}');
+		});

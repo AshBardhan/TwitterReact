@@ -1,17 +1,17 @@
 doctype html
 html
-  head
-    link(rel='stylesheet', href='/css/style.css')
-    link(rel='stylesheet', href='/css/utils/bootstrap.min.custom.css')
-    link(rel='stylesheet', href='/css/utils/bootstrap-grid.custom.css')
-    include ../modals/tweetModal
-    block head
-  body
-    include header
-    .main-content
-      .content
-        block content
-    script(src='../js/utils/jquery.min.js')
-    script(src='../js/utils/bootstrap.min.js')
-    script(src='../js/utils/jquery-ui.min.js')
-    block js
+	head
+		link(rel='stylesheet', href='/css/style.css')
+		link(rel='stylesheet', href='/css/utils/bootstrap.min.custom.css')
+		link(rel='stylesheet', href='/css/utils/bootstrap-grid.custom.css')
+		include ../modals/tweetModal
+		block head
+	body
+		include header
+		.main-content
+			.content
+				block content
+		script(src='../js/utils/jquery.min.js')
+		script(src='../js/utils/bootstrap.min.js')
+		script(src='../js/utils/jquery-ui.min.js')
+		block js

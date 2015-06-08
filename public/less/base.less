@@ -1,234 +1,234 @@
 @-ms-viewport {
-  width: auto;
+	width: auto;
 }
 
 html {
-  @media screen and (min-width: 1200px) {
-    font-size: 14px !important;
-  }
-  @media screen and (min-width: 992px) and (max-width: 1199px) {
-    font-size: 13px !important;
-  }
-  @media screen and (min-width: 768px) and (max-width: 991px) {
-    font-size: 12.5px !important;
-  }
-  @media screen and (max-width: 767px){
-    font-size: 12px !important;
-  }
+	@media screen and (min-width: 1200px) {
+		font-size: 14px !important;
+	}
+	@media screen and (min-width: 992px) and (max-width: 1199px) {
+		font-size: 13px !important;
+	}
+	@media screen and (min-width: 768px) and (max-width: 991px) {
+		font-size: 12.5px !important;
+	}
+	@media screen and (max-width: 767px) {
+		font-size: 12px !important;
+	}
 }
 
 body {
-  color: @text-color-base;
-  min-height: 480px;
-  min-width: 320px;
-  margin: 0;
-  font-size: 1rem !important;
-  background-color: @bg-color-lighter !important;
+	color: @text-color-base;
+	min-height: 480px;
+	min-width: 320px;
+	margin: 0;
+	font-size: 1rem !important;
+	background-color: @bg-color-lighter !important;
 }
 
 h1 {
-  font-size: @font-size-large;
-  margin-bottom: @margin-base;
-  font-weight: 400;
+	font-size: @font-size-large;
+	margin-bottom: @margin-base;
+	font-weight: 400;
 }
 
 h2 {
-  font-size: @font-size-medium;
+	font-size: @font-size-medium;
 }
 
 h3 {
-  font-size: @font-size-base;
+	font-size: @font-size-base;
 }
 
 h4 {
-  font-size: @font-size-small;
+	font-size: @font-size-small;
 }
 
 h5, h6 {
-  font-size: @font-size-xsmall;
+	font-size: @font-size-xsmall;
 }
 
 h6 {
-  font-style: italic;
+	font-style: italic;
 }
 
 h2, h3, h4 {
-  color: @text-color-darker;
-  font-weight: 400;
+	color: @text-color-darker;
+	font-weight: 400;
 }
 
 a, a:visited {
-  text-decoration: none;
-  color: @text-color-special;
+	text-decoration: none;
+	color: @text-color-special;
 }
 
 a:hover, a:focus {
-  color: @text-color-special-dark;
-  text-decoration: underline;
+	color: @text-color-special-dark;
+	text-decoration: underline;
 }
 
 img {
-  max-width: 100%;
-  vertical-align: @text-middle;
-  border: 0;
+	max-width: 100%;
+	vertical-align: @text-middle;
+	border: 0;
 }
 
 //Text color
 .text-light {
-  color: @text-color-light;
+	color: @text-color-light;
 }
 
 .text-lighter {
-  color: @text-color-lighter;
+	color: @text-color-lighter;
 }
 
 .text-dark {
-  color: @text-color-dark;
+	color: @text-color-dark;
 }
 
 .text-darker {
-  color: @text-color-darker;
+	color: @text-color-darker;
 }
 
 .text-blue {
-  color: @text-color-special;
+	color: @text-color-special;
 }
 
 .text-white {
-  color: @text-color-white;
+	color: @text-color-white;
 }
 
 //Text alignment
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .text-left {
-  text-align: left;
+	text-align: left;
 }
 
 .text-right {
-  text-align: right;
+	text-align: right;
 }
 
 .text-top {
-  vertical-align: top;
+	vertical-align: top;
 }
 
 .text-middle {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 .text-bottom {
-  vertical-align: bottom;
+	vertical-align: bottom;
 }
 
 // display property
 .display-inline {
-  display: inline-block;
+	display: inline-block;
 }
 
 .display-block {
-  display: block;
+	display: block;
 }
 
 .text-italic {
-  font-style: italic;
+	font-style: italic;
 }
 
 //text weight
 .text-bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .text-normal {
-  font-weight: normal;
+	font-weight: normal;
 }
 
 //font size
 .text-xsmall {
-  font-size: @font-size-xsmall;
+	font-size: @font-size-xsmall;
 }
 
 .text-small {
-  font-size: @font-size-small;
+	font-size: @font-size-small;
 }
 
 .text-base {
-  font-size: @font-size-base;
+	font-size: @font-size-base;
 }
 
 .text-medium {
-  font-size: @font-size-medium;
+	font-size: @font-size-medium;
 }
 
 .text-large {
-  font-size: @font-size-large;
+	font-size: @font-size-large;
 }
 
 .hide {
-  display: none;
+	display: none;
 }
 
 .row {
-  margin-top: @margin-medium;
-  &.nested {
-    margin-top: @margin-xlarge;
-  }
+	margin-top: @margin-medium;
+	&.nested {
+		margin-top: @margin-xlarge;
+	}
 }
 
 .block-center {
-  margin: 0px auto;
+	margin: 0 auto;
 }
 
 .main-content {
-  min-height: 600px;
-  > .content {
-    max-width: @max-width;
-    margin: 0px auto;
-  }
+	min-height: 600px;
+	> .content {
+		max-width: @max-width;
+		margin: 0 auto;
+	}
 }
 
 .bkground-light {
-  background-color: @bg-color-light;
+	background-color: @bg-color-light;
 }
 
 .bkground-lighter {
-  background-color: @bg-color-lighter;
+	background-color: @bg-color-lighter;
 }
 
 .bkground-dark {
-  background-color: @bg-color-dark;
+	background-color: @bg-color-dark;
 }
 
 .bkground-darker {
-  background-color: @bg-color-darker;
+	background-color: @bg-color-darker;
 }
 
 .bkground-white {
-  background-color: @bg-color-white;
+	background-color: @bg-color-white;
 }
 
 .bkground-black {
-  background-color: @bg-color-black;
+	background-color: @bg-color-black;
 }
 
 .boxes-inline {
-  font-size: 0;
-  .box-half {
-    width: 50%;
-    .display-inline;
-  }
+	font-size: 0;
+	.box-half {
+		width: 50%;
+		.display-inline;
+	}
 }
 
 .brdr-radius-base {
-  -webkit-border-radius: @border-radius-base;
-  -moz-border-radius: @border-radius-base;
-  border-radius: @border-radius-base;
+	-webkit-border-radius: @border-radius-base;
+	-moz-border-radius: @border-radius-base;
+	border-radius: @border-radius-base;
 }
 
 .brdr-radius-circle {
-  -webkit-border-radius: @border-radius-half;
-  -moz-border-radius: @border-radius-half;
-  border-radius: @border-radius-half;
+	-webkit-border-radius: @border-radius-half;
+	-moz-border-radius: @border-radius-half;
+	border-radius: @border-radius-half;
 }
