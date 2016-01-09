@@ -44,7 +44,7 @@ var tweetFlow = {
 					$('#more-tweets').removeClass('hide').text("That's All Folks");
 				} else {
 					$('#more-tweets').addClass('hide');
-//          $('#tweet-list').addClass('hide').children().remove();
+					//$('#tweet-list').addClass('hide').children().remove();
 					$('#no-tweet-list').html('No Tweets found<br> Search for something else');
 				}
 			}
@@ -56,7 +56,7 @@ var tweetFlow = {
 				$('#more-tweets').removeClass('hide').text("That's All Folks");
 			} else {
 				$('#more-tweets').addClass('hide');
-//        $('#tweet-list').addClass('hide').children().remove();
+				//$('#tweet-list').addClass('hide').children().remove();
 				$('#no-tweet-list').html('No Tweets found<br> Search for something else');
 			}
 		}
