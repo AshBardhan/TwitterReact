@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"postinstall": "lessc public/less/style.less public/css/style.css",
  		"start": "node server.js"
 	},
 	"dependencies": {
