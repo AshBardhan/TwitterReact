@@ -1,16 +1,16 @@
 {
-	"name": "application-name",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"postinstall": "lessc public/less/style.less public/css/style.css",
- 		"start": "node server.js"
-	},
-	"dependencies": {
-		"express": "3.5.1",
-		"jade": "*",
-		"twitter": "1.0.1",
-		"less-middleware": "~0.1.15",
-		"react" : "~0.12.2"
-	}
+    "name": "application-name",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "postinstall": "lessc public/less/style.less public/css/style.css",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "3.5.1",
+        "less-middleware": "~0.1.15",
+        "pug": "^2.0.0-rc.2",
+        "react": "~0.12.2",
+        "twitter": "1.0.1"
+    }
 }
