@@ -10,7 +10,7 @@
         "express": "4.17.1",
         "less-middleware": "~0.1.15",
         "pug": "^2.0.0-rc.2",
-        "react": "~0.12.2",
+        "react": "~16.13.1",
         "twitter": "1.0.1"
     }
 }
