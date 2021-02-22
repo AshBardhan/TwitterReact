@@ -7,8 +7,9 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "express": "4.17.1",
+        "express": ">=3.0.0 <4.0.0",
         "less-middleware": "~0.1.15",
+        "method-override": "^3.0.0",
         "pug": "^2.0.0-rc.2",
         "react": "~0.12.2",
         "twitter": "1.0.1"
